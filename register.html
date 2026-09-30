@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join the Club</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <a href="index.html">← Back to home</a>
+
+        <h1>Join the University Club</h1>
+        <p>Create your member account.</p>
+
+        <form>
+            <label for="full-name">Full name</label>
+            <input
+                id="full-name"
+                name="full_name"
+                type="text"
+                autocomplete="name"
+                maxlength="100"
+                required
+            >
+
+            <label for="student_id">Student ID</label>
+            <input
+                id="student_id"
+                name="student_id"
+                type="text"
+                maxlength="20"
+                required
+            >
+
+            <label for="email">Email address</label>
+            <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+            >
+
+            <label for="password">Password</label>
+            <input
+                id="password"
+                name="password"
+                type="password"
+                autocomplete="new-password"
+                minlength="12"
+                aria-describedby="password-help"
+                required
+            >
+            <small id="password-help">
+                Use at least 12 characters.
+            </small>
+
+            <button type="button" disabled>
+                Create account — coming soon
+            </button>
+        </form>
+
+        <p>This form is a preview. It does not save information yet.</p>
+    </main>
+</body>
+</html>

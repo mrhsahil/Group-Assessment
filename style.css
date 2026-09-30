@@ -59,3 +59,37 @@ button:focus-visible {
     outline: 3px solid #1E3A8A;
     outline-offset: 4px;
 }
+
+form {
+    display: grid;
+    gap: 12px;
+    max-width: 440px;
+    margin-top: 24px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #64748B;
+    border-radius: 6px;
+    font: inherit;
+}
+
+input:focus-visible {
+    outline: 3px solid #1E3A8A;
+    outline-offset: 2px;
+}
+
+small {
+    color: #475569;
+}
+
+button:disabled {
+    background: #475569;
+    cursor: not-allowed;
+}
