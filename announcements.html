@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcements | University Club</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="announcements.js" defer></script>
+</head>
+<body>
+    <main>
+        <a href="dashboard.html">← Back to dashboard</a>
+
+        <h1>Club announcements</h1>
+
+        <p class="demo-notice">
+            Demonstration only. These are sample announcements.
+        </p>
+
+        <form id="search-form">
+            <label for="search">Search announcements</label>
+            <input id="search" type="search" placeholder="Try welcome">
+
+            <label for="category">Category</label>
+            <select id="category">
+                <option value="all">All categories</option>
+                <option value="General">General</option>
+                <option value="Events">Events</option>
+            </select>
+
+            <button type="submit">Search</button>
+        </form>
+
+        <p id="results-message" role="status"></p>
+
+        <div id="announcement-list"></div>
+
+        <nav aria-label="Announcement pages">
+            <button id="previous" type="button">Previous</button>
+            <span id="page-number"></span>
+            <button id="next" type="button">Next</button>
+        </nav>
+    </main>
+</body>
+</html>

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Join the Club</title>
     <link rel="stylesheet" href="style.css">
+    <script src="register.js" defer></script>
 </head>
 <body>
     <main>
@@ -13,7 +14,7 @@
         <h1>Join the University Club</h1>
         <p>Create your member account.</p>
 
-        <form>
+        <form id="register-form">
             <label for="full-name">Full name</label>
             <input
                 id="full-name"
@@ -56,10 +57,11 @@
                 Use at least 12 characters.
             </small>
 
-            <button type="button" disabled>
-                Create account — coming soon
-            </button>
+            <button type="submit">Check registration form</button>
         </form>
+
+        <p id="register-feedback" role="status"></p>
+        <p>Already have an account? <a href="login.html">Go to login</a></p>
 
         <p>This form is a preview. It does not save information yet.</p>
     </main>

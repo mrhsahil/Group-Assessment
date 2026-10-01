@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Login | University Club</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="login.js" defer></script>
+</head>
+<body>
+
+<p>
+    <a href="dashboard.html">Explore the sample member dashboard</a>
+</p>
+
+    <main>
+        <a href="index.html">← Back to home</a>
+
+        <h1>Member login</h1>
+        <p>Access your club membership and announcements.</p>
+
+        <p id="demo-note">
+            Front-end demonstration only. Use sample details.
+            This page does not sign you in or save your password.
+        </p>
+
+        <form id="login-form" aria-describedby="demo-note">
+            <label for="email">Email address</label>
+            <input
+                id="email"
+                type="email"
+                autocomplete="username"
+                required
+            >
+
+            <label for="password">Password</label>
+            <input
+                id="password"
+                type="password"
+                autocomplete="current-password"
+                required
+            >
+
+            <button type="submit">Check login form</button>
+        </form>
+
+        <p id="login-feedback" role="status"></p>
+
+        <p>
+            New to the club?
+            <a href="register.html">Register here</a>
+        </p>
+
+        <p>
+            <a href="dashboard.html">Explore the sample member dashboard</a>
+        </p>
+
+        <p>
+            <a href="admin.html">Explore the sample admin dashboard</a>
+        </p>
+
+    </main>
+</body>
+</html>

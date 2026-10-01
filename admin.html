@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | University Club</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <a href="index.html">← Back to home</a>
+
+        <h1>Admin dashboard</h1>
+
+        <p class="demo-notice">
+            Front-end preview only. This page is not protected by
+            admin login yet. All figures below are sample data.
+        </p>
+
+        <div class="dashboard-grid">
+            <section class="dashboard-card">
+                <h2>Memberships</h2>
+                <p><strong>3</strong> sample memberships</p>
+                <p>View members and manage membership records.</p>
+                <button type="button" disabled>
+                    Manage memberships — coming soon
+                </button>
+            </section>
+
+            <section class="dashboard-card">
+                <h2>Announcements</h2>
+                <p><strong>4</strong> sample announcements</p>
+                <p>Create, edit, and delete club announcements.</p>
+                <p><a href="#manage-announcements">Manage announcements</a></p>
+            </section>
+        </div>
+
+    <section id="manage-announcements">
+        <h2>Manage announcements</h2>
+
+        <p>
+            Layout preview only. Publishing, editing, and deleting will be connected later.
+        </p>
+
+    <form>
+        <label for="announcement-title">Title</label>
+        <input
+            id="announcement-title"
+            name="title"
+            type="text"
+            maxlength="150"
+            required>
+
+        <label for="announcement-category">Category</label>
+        <select id="announcement-category" name="category" required>
+            <option value="">Choose a category</option>
+            <option value="General">General</option>
+            <option value="Events">Events</option>
+        </select>
+
+        <label for="announcement-content">Announcement message</label>
+        <textarea
+            id="announcement-content"
+            name="content"
+            rows="6"
+            maxlength="2000"
+            required
+        ></textarea>
+
+        <button type="button" disabled>
+            Publish — coming soon
+        </button>
+    </form>
+
+    <h3>Existing announcements</h3>
+    <p>Sample record:</p>
+
+    <article class="announcement-card">
+        <h4>Welcome to the club</h4>
+        <p>Category: General</p>
+        <p>Meet fellow students and join club activities.</p>
+
+        <button type="button" disabled>Edit</button>
+        <button type="button" disabled>Delete</button>
+    </article>
+    </section>
+
+        <p><a href="dashboard.html">View member dashboard preview</a></p>
+
+    </main>
+</body>
+</html>
