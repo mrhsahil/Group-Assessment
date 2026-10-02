@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Club Chatbot Test</title>
+
+    <link rel="stylesheet" href="chatbot.css">
+</head>
+
+<body>
+
+    <!-- Chatbot window -->
+    <div class="chat-container" id="chatContainer">
+
+        <div class="chat-header">
+
+            <div>
+                <strong>🎓 Club Assistant</strong>
+                <p>University Club Support</p>
+            </div>
+
+            <button class="close-btn" onclick="closeChat()">×</button>
+
+        </div>
+
+
+        <div class="chat-box" id="chatBox">
+
+            <div class="bot-message">
+                Hi! How can I help you with the University Club?
+            </div>
+
+        </div>
+
+
+        <div class="suggestions">
+
+            <button onclick="quickQuestion('How do I join the club?')">
+                Join Club
+            </button>
+
+            <button onclick="quickQuestion('Where can I see announcements?')">
+                Announcements
+            </button>
+
+            <button onclick="quickQuestion('What events are available?')">
+                Events
+            </button>
+
+        </div>
+
+
+        <div class="chat-input">
+
+            <input
+                type="text"
+                id="userInput"
+                placeholder="Ask a question..."
+                autocomplete="off"
+            >
+
+            <button id="sendButton">Send</button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Button used to open chatbot -->
+    <button class="chat-button" id="chatButton" onclick="openChat()">
+        💬
+    </button>
+
+
+    <script src="chatbot.js"></script>
+
+</body>
+</html>
