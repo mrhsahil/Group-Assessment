@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>University Club</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="chatbot.css">
 </head>
 <body>
     <main>
@@ -23,5 +24,66 @@
             <p>No announcements yet. Check back for club updates.</p>
         </section>
     </main>
+
+    <div class="chat-container" id="chatContainer">
+        <div class="chat-header">
+            <strong>🎓 Club Assistant</strong>
+            <button
+                type="button"
+                class="close-btn"
+                aria-label="Close club assistant"
+                onclick="closeChat()"
+            >×</button>
+        </div>
+
+        <div class="chat-box" id="chatBox">
+            <div class="bot-message">Hi! How can I help you?</div>
+        </div>
+
+        <div class="suggestions">
+            <button onclick="quickQuestion('How do I join the club?')">
+                Join Club
+            </button>
+
+            <button onclick="quickQuestion('Where can I see announcements?')">
+                Announcements
+            </button>
+
+            <button onclick="quickQuestion('Are there any events?')">
+                Events
+            </button>
+
+            <button onclick="quickQuestion('What does this club do?')">
+                About Club
+            </button>
+
+            <button onclick="quickQuestion('Who can join the club?')">
+                Eligibility
+            </button>
+
+            <button onclick="quickQuestion('How do I register?')">
+                Registration
+            </button>
+        </div>
+
+        <div class="chat-input">
+            <input
+                id="userInput"
+                aria-label="Question for the club assistant"
+                placeholder="Ask a question..."
+            >
+            <button id="sendButton">Send</button>
+        </div>
+    </div>
+
+    <button
+        type="button"
+        class="chat-button"
+        id="chatButton"
+        aria-label="Open club assistant"
+        onclick="openChat()"
+    >💬</button>
+
+    <script src="chatbot.js"></script>
 </body>
 </html>
