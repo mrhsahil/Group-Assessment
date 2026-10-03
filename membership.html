@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Membership | University Club</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="membership.js" defer></script>
+</head>
+<body>
+    <main>
+        <a href="dashboard.html">← Back to dashboard</a>
+
+        <h1>My membership</h1>
+
+        <p class="demo-notice">
+            Sample data only. Changes are not saved and will
+            reset when you refresh. Use made-up details.
+        </p>
+
+        <section aria-labelledby="details-heading">
+            <h2 id="details-heading">Current details</h2>
+
+            <dl>
+                <dt>Full name</dt>
+                <dd id="display-name">Sample Student</dd>
+
+                <dt>Student ID</dt>
+                <dd>DEMO001</dd>
+
+                <dt>Email</dt>
+                <dd id="display-email">student@example.com</dd>
+
+                <dt>Status</dt>
+                <dd><span class="status-badge">Active</span></dd>
+            </dl>
+        </section>
+
+        <section aria-labelledby="edit-heading">
+            <h2 id="edit-heading">Edit contact details</h2>
+            <p>Student ID and membership status cannot be edited here.</p>
+
+            <form id="membership-form">
+                <label for="full-name">Full name</label>
+                <input
+                    id="full-name"
+                    name="full_name"
+                    type="text"
+                    value="Sample Student"
+                    maxlength="100"
+                    autocomplete="name"
+                    required
+                >
+
+                <label for="email">Email address</label>
+                <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    value="student@example.com"
+                    maxlength="254"
+                    autocomplete="email"
+                    required
+                >
+
+                <button type="submit">Preview changes</button>
+                <button type="button" id="cancel-edit">
+                    Cancel edits
+                </button>
+            </form>
+
+            <p id="membership-feedback" role="status"></p>
+        </section>
+    </main>
+</body>
+</html>
