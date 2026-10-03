@@ -8,28 +8,54 @@
     <link rel="stylesheet" href="chatbot.css">
 </head>
 <body>
-    <main>
+    <main class="homepage">
+    <header class="home-header">
+        <a class="club-name" href="index.html">University Club</a>
+
         <nav aria-label="Main navigation">
-        <a href="index.html" aria-current="page">Home</a> |
-        <a href="register.html">Register</a> |
-        <a href="login.html">Login</a> |
-        <a href="announcements.html">Announcements</a>
+            <a href="index.html" aria-current="page">Home</a>
+            <a href="register.html">Register</a>
+            <a href="login.html">Login</a>
+            <a href="announcements.html">Announcements</a>
         </nav>
-        <h1>Welcome to University Club</h1>
-        <p class="intro">
-            Connect with other students and stay informed.
+    </header>
+
+    <section class="home-welcome">
+        <p class="home-label">CONNECT · PARTICIPATE · BELONG</p>
+        <h1>Your university.<br>Your community.</h1>
+        <p>
+            Meet fellow students, take part in club activities,
+            and keep up with the latest announcements.
         </p>
 
-        <section>
-            <h2>Membership</h2>
-            <p><a href="register.html">Join the club</a></p>
+        <a class="home-button" href="register.html">Join the club</a>
+        <a class="home-login" href="login.html">Already a member? Log in</a>
+    </section>
+
+    <div class="home-cards">
+        <section class="home-card">
+            <h2>Become a member</h2>
+            <p>
+                Join our student community and manage your
+                membership in one place.
+            </p>
+            <a href="register.html">Explore membership →</a>
         </section>
 
-        <section>
-            <h2>Announcements</h2>
-            <p><a href="announcements.html">Browse club announcements</a></p>
+        <section class="home-card">
+            <h2>Stay informed</h2>
+            <p>
+                Browse club news, upcoming activities,
+                and opportunities to get involved.
+            </p>
+            <a href="announcements.html">View announcements →</a>
         </section>
-    </main>
+    </div>
+
+    <footer class="home-footer">
+        <p>University Club · Bringing students together</p>
+    </footer>
+</main>
 
     <div class="chat-container" id="chatContainer">
         <div class="chat-header">
