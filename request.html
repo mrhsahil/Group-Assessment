@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Request Announcement | University Club</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="membership.html">Membership</a>
+    <a href="announcements.html">Announcements</a>
+    <a href="request.html" aria-current="page">Request Announcement</a>
+    <a href="admin.php" id="admin-link" hidden>Admin</a>
+    <a href="logout.php">Logout</a>
+</nav>
+
+
+        <h1>Request an announcement</h1>
+
+        <p>
+            Submit an announcement request for the club administrator
+            to review. Your request will only be published after it
+            has been approved by an administrator.
+        </p>
+
+
+        <!-- Announcement request form -->
+        <form
+            id="announcement-request-form"
+            action="request.php"
+            method="POST"
+        >
+
+            <label for="request-title">
+                Title
+            </label>
+
+            <input
+                id="request-title"
+                name="title"
+                type="text"
+                maxlength="150"
+                required
+            >
+
+
+            <label for="request-category">
+                Category
+            </label>
+
+            <select
+                id="request-category"
+                name="category"
+                required
+            >
+
+                <option value="">
+                    Choose a category
+                </option>
+
+                <option value="General">
+                    General
+                </option>
+
+                <option value="Events">
+                    Events
+                </option>
+
+            </select>
+
+
+            <label for="request-content">
+                Announcement message
+            </label>
+
+            <textarea
+                id="request-content"
+                name="des"
+                rows="6"
+                maxlength="2000"
+                required
+            ></textarea>
+
+            <button type="submit">
+                Submit request
+            </button>
+        </form>
+
+        <p>
+            <a href="announcements.html">
+                ← Back to announcements
+            </a>
+        </p>
+
+    </main>
+    <script src="navbar.js"></script>
+
+</body>
+
+</html>

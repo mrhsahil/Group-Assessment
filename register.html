@@ -5,16 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Join the Club</title>
     <link rel="stylesheet" href="style.css">
-    <script src="register.js" defer></script>
+    <script src="register.js" defer></script> 
 </head>
 <body>
     <main>
-        <a href="index.html">← Back to home</a>
+        <nav aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="announcements.html">Announcements</a>
+    <a href="login.html">Login</a>
+</nav>
 
         <h1>Join the University Club</h1>
         <p>Create your member account.</p>
 
-        <form id="register-form">
+        <form id="register-form" action="register.php" method="POST">
             <label for="full-name">Full name</label>
             <input
                 id="full-name"
@@ -57,13 +61,12 @@
                 Use at least 12 characters.
             </small>
 
-            <button type="submit">Check registration form</button>
+            <button type="submit">Register Account</button>
         </form>
 
         <p id="register-feedback" role="status"></p>
         <p>Already have an account? <a href="login.html">Go to login</a></p>
 
-        <p>This form is a preview. It does not save information yet.</p>
     </main>
 </body>
 </html>

@@ -1,26 +1,10 @@
-// Sample records. The database will supply these later.
-const announcements = [
-    {
-        title: "Welcome to the club",
-        category: "General",
-        text: "Meet fellow students and get involved in club activities."
-    },
-    {
-        title: "Club games afternoon",
-        category: "Events",
-        text: "Join members for an afternoon of board games."
-    },
-    {
-        title: "Volunteers wanted",
-        category: "General",
-        text: "Help welcome new members and organise activities."
-    },
-    {
-        title: "Study group meetup",
-        category: "Events",
-        text: "Bring your notes and study together."
-    }
-];
+console.log("announcements.js is running");
+
+let announcements = [];
+let results = [];
+let currentPage = 1;
+
+const perPage = 2;
 
 const searchForm = document.querySelector("#search-form");
 const searchInput = document.querySelector("#search");
@@ -31,11 +15,27 @@ const pageNumber = document.querySelector("#page-number");
 const previousButton = document.querySelector("#previous");
 const nextButton = document.querySelector("#next");
 
-let results = announcements;
-let currentPage = 1;
-const perPage = 2;
+
+// Get announcements from the database
+fetch("announcement.php")
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+
+        announcements = data;
+        results = announcements;
+
+        showAnnouncements();
+    })
+    .catch(function (error) {
+        console.error("Error loading announcements:", error);
+        message.textContent = "Could not load announcements.";
+    });
+
 
 function showAnnouncements() {
+
     list.replaceChildren();
 
     const totalPages = Math.max(1, Math.ceil(results.length / perPage));
@@ -43,6 +43,7 @@ function showAnnouncements() {
     const visibleItems = results.slice(start, start + perPage);
 
     for (const announcement of visibleItems) {
+
         const card = document.createElement("article");
         card.className = "announcement-card";
 
@@ -53,7 +54,9 @@ function showAnnouncements() {
         category.textContent = "Category: " + announcement.category;
 
         const description = document.createElement("p");
-        description.textContent = announcement.text;
+
+        // Database column is called "des"
+        description.textContent = announcement.des;
 
         card.append(title, category, description);
         list.append(card);
@@ -66,21 +69,27 @@ function showAnnouncements() {
     }
 
     pageNumber.textContent = "Page " + currentPage + " of " + totalPages;
+
     previousButton.disabled = currentPage === 1;
     nextButton.disabled = currentPage === totalPages;
 }
 
+
+// Search and category filter
 searchForm.addEventListener("submit", function (event) {
+
     event.preventDefault();
 
     const keyword = searchInput.value.trim().toLowerCase();
     const selectedCategory = categoryInput.value;
 
     results = announcements.filter(function (announcement) {
+
         const words =
-            (announcement.title + " " + announcement.text).toLowerCase();
+            (announcement.title + " " + announcement.des).toLowerCase();
 
         const matchesSearch = words.includes(keyword);
+
         const matchesCategory =
             selectedCategory === "all" ||
             announcement.category === selectedCategory;
@@ -92,14 +101,26 @@ searchForm.addEventListener("submit", function (event) {
     showAnnouncements();
 });
 
+
+// Previous page
 previousButton.addEventListener("click", function () {
+
     currentPage--;
     showAnnouncements();
 });
 
+
+// Next page
 nextButton.addEventListener("click", function () {
+
     currentPage++;
     showAnnouncements();
 });
 
-showAnnouncements();
+
+// Registration success message
+const params = new URLSearchParams(window.location.search);
+
+if (params.get("registered") === "success") {
+    alert("Registration successful!");
+}

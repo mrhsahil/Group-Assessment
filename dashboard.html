@@ -6,55 +6,80 @@
     <title>Member Dashboard | University Club</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
     <main>
-        <nav aria-label="Main navigation">
-            <a href="index.html">Home</a> |
-            <a href="dashboard.html" aria-current="page">Dashboard</a>
-        </nav>
+
+<nav aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="dashboard.html" aria-current="page">Dashboard</a>
+    <a href="membership.html">Membership</a>
+    <a href="announcements.html">Announcements</a>
+    <a href="request.html">Request Announcement</a>
+    <a href="admin.php" id="admin-link" hidden>Admin</a>
+    <a href="logout.php">Logout</a>
+</nav>
 
         <h1>Member dashboard</h1>
 
-        <p class="demo-notice">
-            Demonstration only: all information below is sample data.
-            No account is signed in.
-        </p>
-
         <div class="dashboard-grid">
+
+            <!-- Membership section -->
             <section class="dashboard-card">
+
                 <h2>My membership</h2>
+
                 <dl>
+
                     <dt>Name</dt>
-                    <dd>Sample Student</dd>
+                    <dd id="dashboard-name">Loading...</dd>
 
                     <dt>Student ID</dt>
-                    <dd>DEMO001</dd>
+                    <dd id="dashboard-student-id">Loading...</dd>
 
                     <dt>Membership status</dt>
-                    <dd><span class="status-badge">Active</span></dd>
+                    <dd>
+                        <span class="status-badge">Active</span>
+                    </dd>
+
                 </dl>
 
-                <p><a href="membership.html">View and edit membership</a></p>
+                <p>
+                    <a href="membership.html">
+                        View and edit membership
+                    </a>
+                </p>
 
             </section>
 
+
+            <!-- Announcements section -->
             <section class="dashboard-card">
-                <h2>Latest announcements</h2>
-                <p><a href="announcements.html">Browse all announcements</a></p>
-                
-                <article>
-                    <h3>Welcome to the club</h3>
-                    <p>Meet fellow members and discover club activities.</p>
-                </article>
 
-                <article>
-                    <h3>Volunteer opportunities</h3>
-                    <p>Help organise activities and welcome new members.</p>
-                </article>
+                <h2>Latest announcements</h2>
+
+                <p>
+                    <a href="announcements.html">
+                        Browse all announcements
+                    </a>
+                </p>
+
+                <div id="dashboard-announcements">
+                    <p>Loading announcements...</p>
+                </div>
+
             </section>
+
         </div>
 
-        <a href="login.html">Go to login page</a>
+        <p>
+            <a href="logout.php">Logout</a>
+        </p>
+
     </main>
+
+    <script src="dashboard.js"></script>
+    <script src="navbar.js"></script>
 </body>
 </html>

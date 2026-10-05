@@ -14,9 +14,10 @@
 
         <nav aria-label="Main navigation">
             <a href="index.html" aria-current="page">Home</a>
-            <a href="login.html">Login</a>
             <a href="announcements.html">Announcements</a>
             <a href="dashboard.html">Dashboard</a>
+            <a href="admin.php" id="admin-link" hidden>Admin</a>
+            <a href="login.html" id="login-link">Login</a>
         </nav>
     </header>
 
@@ -116,6 +117,8 @@
         onclick="openChat()"
     >💬</button>
 
+    <script src="index.js"></script>
+    <script src="navbar.js"></script>
     <script src="chatbot.js"></script>
 </body>
 </html>

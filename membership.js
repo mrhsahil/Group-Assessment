@@ -1,47 +1,68 @@
-const form = document.querySelector("#membership-form");
-const nameInput = document.querySelector("#full-name");
-const emailInput = document.querySelector("#email");
-const displayName = document.querySelector("#display-name");
-const displayEmail = document.querySelector("#display-email");
+// Load the logged-in student's details
+fetch("membership.php")
+    .then(function(response) {
+        if (!response.ok) {
+            throw new Error("Could not load membership.");
+        }
+
+        return response.json();
+    })
+    .then(function(member) {
+
+        document.querySelector("#display-name").textContent =
+            member.name;
+
+        document.querySelector("#display-student-id").textContent =
+            member.student_id;
+
+        document.querySelector("#display-email").textContent =
+            member.email;
+
+        document.querySelector("#full-name").value =
+            member.name;
+
+        document.querySelector("#email").value =
+            member.email;
+    })
+    .catch(function(error) {
+        console.error("Could not load membership:", error);
+    });
+
+
+// Save membership changes
+const membershipForm = document.querySelector("#membership-form");
 const feedback = document.querySelector("#membership-feedback");
-const cancelButton = document.querySelector("#cancel-edit");
 
-nameInput.addEventListener("input", function () {
-    nameInput.setCustomValidity("");
-    feedback.textContent = "";
-});
+membershipForm.addEventListener("submit", function(event) {
 
-emailInput.addEventListener("input", function () {
-    feedback.textContent = "";
-});
-
-form.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    const fullName = nameInput.value.trim();
+    const formData = new FormData(membershipForm);
 
-    if (fullName === "") {
-        nameInput.setCustomValidity("Enter a name, not only spaces.");
-        nameInput.reportValidity();
-        return;
-    }
+    fetch("membership.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(function(response) {
 
-    nameInput.value = fullName;
-    emailInput.value = emailInput.value.trim();
+        if (!response.ok) {
+            throw new Error("Could not save changes.");
+        }
 
-    displayName.textContent = fullName;
-    displayEmail.textContent = emailInput.value;
+        return response.text();
+    })
+    .then(function() {
 
-    feedback.textContent =
-        "Preview updated. These changes are not saved to an account.";
+        const name = document.querySelector("#full-name").value;
+        const email = document.querySelector("#email").value;
+
+        document.querySelector("#display-name").textContent = name;
+        document.querySelector("#display-email").textContent = email;
+
+        feedback.textContent = "Membership updated successfully.";
+    })
+    .catch(function(error) {
+        console.error(error);
+        feedback.textContent = "Could not save changes.";
+    });
 });
-
-cancelButton.addEventListener("click", function () {
-    nameInput.value = displayName.textContent;
-    emailInput.value = displayEmail.textContent;
-    nameInput.setCustomValidity("");
-
-    feedback.textContent =
-        "Unsaved edits cancelled. The fields match the current preview.";
-});
-

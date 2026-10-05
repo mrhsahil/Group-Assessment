@@ -9,31 +9,35 @@
 </head>
 <body>
     <main>
-        <a href="dashboard.html">← Back to dashboard</a>
+<nav aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="membership.html" aria-current="page">Membership</a>
+    <a href="announcements.html">Announcements</a>
+    <a href="request.html">Request Announcement</a>
+    <a href="admin.php" id="admin-link" hidden>Admin</a>
+    <a href="logout.php">Logout</a>
+</nav>
 
         <h1>My membership</h1>
 
-        <p class="demo-notice">
-            Sample data only. Changes are not saved and will
-            reset when you refresh. Use made-up details.
-        </p>
 
         <section aria-labelledby="details-heading">
             <h2 id="details-heading">Current details</h2>
 
             <dl>
-                <dt>Full name</dt>
-                <dd id="display-name">Sample Student</dd>
+        <dt>Full name</dt>
+        <dd id="display-name">Loading...</dd>
 
-                <dt>Student ID</dt>
-                <dd>DEMO001</dd>
+        <dt>Student ID</dt>
+        <dd id="display-student-id">Loading...</dd>
 
-                <dt>Email</dt>
-                <dd id="display-email">student@example.com</dd>
+        <dt>Email</dt>
+        <dd id="display-email">Loading...</dd>
 
-                <dt>Status</dt>
-                <dd><span class="status-badge">Active</span></dd>
-            </dl>
+        <dt>Status</dt>
+        <dd><span class="status-badge">Active</span></dd>
+        </dl>
         </section>
 
         <section aria-labelledby="edit-heading">
@@ -63,7 +67,7 @@
                     required
                 >
 
-                <button type="submit">Preview changes</button>
+                <button type="submit">Save changes</button>
                 <button type="button" id="cancel-edit">
                     Cancel edits
                 </button>
@@ -72,5 +76,6 @@
             <p id="membership-feedback" role="status"></p>
         </section>
     </main>
+    <script src="navbar.js"></script>
 </body>
 </html>
