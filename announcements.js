@@ -124,3 +124,17 @@ const params = new URLSearchParams(window.location.search);
 if (params.get("registered") === "success") {
     alert("Registration successful!");
 }
+
+// Check if user is logged in
+fetch("session.php")
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        if (!data.loggedIn) {
+            window.location.href = "login.html";
+        }
+    })
+    .catch(function(error) {
+        console.error("Could not check login status:", error);
+    });
